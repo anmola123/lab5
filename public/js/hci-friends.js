@@ -3,8 +3,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	clickName();
 })
-
 /*
  * Function that is called when the document is ready.
  */
@@ -44,3 +44,13 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+
+function clickName(){
+	$(".bob").click(function(){
+		event.preventDefault();
+		var name = $(this).text();
+		//console.log(name);
+		$(this).text(anagrammedName(name));
+	});
+}	
